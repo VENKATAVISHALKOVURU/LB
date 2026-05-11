@@ -15,7 +15,39 @@ $(document).ready(function () {
     )
   });
 
-  
+  // Cinematic Focus: 3D Tilt Interaction
+  const cards = document.querySelectorAll('.gallery-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      // Sensitivity factor (higher = more tilt)
+      const sensitivity = 15;
+      const rotateX = ((centerY - y) / centerY) * sensitivity;
+      const rotateY = ((x - centerX) / centerX) * sensitivity;
+
+      card.style.transform = `perspective(1000px) scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      
+      // Also apply a slight movement to the hero image for a parallax effect
+      const hero = card.querySelector('.heroImages');
+      if (hero) {
+        hero.style.transform = `translateZ(50px) translateX(${rotateY * 2}px) translateY(${-rotateX * 2}px)`;
+      }
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) scale(1) rotateX(0deg) rotateY(0deg)`;
+      const hero = card.querySelector('.heroImages');
+      if (hero) {
+        hero.style.transform = `translateZ(0px) translateX(0px) translateY(0px)`;
+      }
+    });
+  });
 });
 
 function select(selector) {
