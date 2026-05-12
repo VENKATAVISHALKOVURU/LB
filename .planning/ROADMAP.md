@@ -24,5 +24,12 @@
     - Add subtle attraction/repulsion logic.
     - Status: [x]
 
+- [x] **Phase 5: Refractive Hover**
+    - Add refractive "lens flare" effect to glass cards on hover.
+    - Implement smooth 3D tilt refinement.
+    - Status: [x]
+
+
+
 
 

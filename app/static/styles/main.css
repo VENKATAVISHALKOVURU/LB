@@ -184,21 +184,45 @@
 }
 
 .messageCard {
-    overflow: hidden;
+    overflow: hidden; /* Contain the flare sweep */
     width: 100%;
     height: 80vh; /* Scaled up to majestic monolithic height */
     position: absolute;
-    background: rgba(255, 255, 255, 0.7); /* Translucent base */
+    background: rgba(255, 255, 255, 0.05); /* Darker/Sheerer base for better flare contrast */
     backdrop-filter: blur(15px); /* Premium glass effect */
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    top: 4vh; /* Maintained tight connection with the orb */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    top: 4vh;
     z-index: 1;
 
-    border-radius: 30px; /* Slightly smoother corners */
+    border-radius: 30px;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1);
 }
+
+/* Refractive Flare Effect */
+.messageCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at var(--flareX, 50%) var(--flareY, 50%),
+        rgba(255, 255, 255, 0.25) 0%,
+        transparent 60%
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 3;
+}
+
+.messageCard:hover::after {
+    opacity: 1;
+}
+
 
 .gallery-card:hover .messageCard {
     box-shadow: 0 20px 50px rgba(0,0,0,0.3), 0 0 25px rgba(99, 88, 241, 0.3); /* Refined hover glow */
@@ -301,6 +325,11 @@
     background: radial-gradient(circle at 50% 110%, rgba(255,255,255,0.5), transparent 75%);
     pointer-events: none;
     z-index: 0;
+}
+
+/* ANTI-GRAVITY ISOLATED FIX: Remove the white strip/panel from the first section */
+.first.section::after {
+    display: none !important;
 }
 
 
