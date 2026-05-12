@@ -150,7 +150,7 @@ function addPhotos() {
   var nav = [];
   for (i = 0; i < data.length; i++) {
     var _html = template.replace('{{index}}', i)
-      .replace('{{img}}', '/static/images/' + data[i].img)
+      .replace('{{img}}', data[i].img)
       .replace('{{caption}}', data[i].caption)
       .replace('{{desc}}', data[i].desc);
     html.push(_html);

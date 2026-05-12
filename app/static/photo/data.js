@@ -1,62 +1,115 @@
-var data = [
-  {
-    img: "Angry mix .jpg.jpeg",
-    caption: "The Angry Mix",
-    desc: "Even when you're mad, you're the most adorable force in the universe."
-  },
-  {
-    img: "Baby doll or barbie doll if ok....jpg.jpeg",
-    caption: "Barbie Era",
-    desc: "A living doll. Perfection in every frame."
-  },
-  {
-    img: "Diva mix .jpg.jpeg",
-    caption: "Diva Energy",
-    desc: "Unmatched confidence. The world is your runway."
-  },
-  {
-    img: "Gangster mix .jpg.jpeg",
-    caption: "The Boss",
-    desc: "Running the show since day one. Pure swag."
-  },
-  {
-    img: "Happy mix .jpg.jpeg",
-    caption: "Pure Joy",
-    desc: "Your smile is the frequency that brightens my entire world."
-  },
-  {
-    img: "Idhi Acham lady villians lekka pettindhi pose 😆.jpg.jpeg",
-    caption: "Villain Origin",
-    desc: "Stunningly dangerous. A look that could rule kingdoms."
-  },
-  {
-    img: "Pretty mix .jpg.jpeg",
-    caption: "Grace",
-    desc: "Timeless beauty and effortless elegance."
-  },
-  {
-    img: "Sleeping mix .jpg.jpeg",
-    caption: "Serenity",
-    desc: "Peaceful moments, dreaming of infinite possibilities."
-  },
-  {
-    img: "Swag mix.jpg.jpeg",
-    caption: "The Swag",
-    desc: "Cool, calm, and absolutely iconic."
-  },
-  {
-    img: "chashmish or fatty mix .jpg.jpeg",
-    caption: "Chashmish",
-    desc: "Specs and spirit. The smartest look in the room."
-  },
-  {
-    img: "crazy mix .jpg.jpeg",
-    caption: "Unfiltered",
-    desc: "Life is better when we're a little bit crazy together."
-  },
-  {
-    img: "cutie mix.jpg.jpeg",
-    caption: "Cutie Pie",
-    desc: "Maximum level of sweetness detected."
-  }
-];
+var data = [];
+
+var dataStr = "mix1<br>\
+<br>\
+Photographer Mix<br>\
+<br>\
+<br>\
+mix2<br>\
+<br>\
+Sleeping Mix<br>\
+<br>\
+<br>\
+mix3<br>\
+<br>\
+Model Mix<br>\
+<br>\
+<br>\
+mix4<br>\
+<br>\
+Angry Mix<br>\
+<br>\
+<br>\
+mix5<br>\
+<br>\
+Happy Mix<br>\
+<br>\
+<br>\
+mix6<br>\
+<br>\
+Pretty Mix<br>\
+<br>\
+<br>\
+mix7<br>\
+<br>\
+Gangster Mix<br>\
+<br>\
+<br>\
+mix8<br>\
+<br>\
+Sunflower Mix<br>\
+<br>\
+<br>\
+mix9<br>\
+<br>\
+Wow Mix<br>\
+<br>\
+<br>\
+mix10<br>\
+<br>\
+Scary Mix<br>\
+<br>\
+<br>\
+mix11<br>\
+<br>\
+Rajnikanth Mix<br>\
+<br>\
+<br>\
+mix12<br>\
+<br>\
+Fat Mix<br>\
+<br>\
+<br>\
+"
+  
+
+
+var d = dataStr.split("<br><br><br>");
+for(var i = 0; i<d.length-1; i++){
+  var c = d[i].split("<br><br>");
+  //console.log((c[0].split('.'))[1]);
+  data.push({
+    img: c[0]+ ".jpg",
+    caption: c[1],
+    desc: c[1]
+  });
+  //console.log(c[1]);
+}
+
+// console.log(data);
+
+
+// "1.DeathNote<br>\
+// <br>\
+// Japanese Cartoon<br>\
+// <br>\
+// <br>\
+// 2.FateUBW<br>\
+// <br>\
+// Japanese Cartoon<br>\
+// <br>\
+// <br>\
+// 3.FateZero<br>\
+// <br>\
+// Japanese Cartoon<br>\
+// <br>\
+// <br>\
+// 4.GoneGirl<br>\
+// <br>\
+// American Movie<br>\
+// <br>\
+// <br>\
+// 5.Shameless<br>\
+// <br>\
+// American TV Series<br>\
+// <br>\
+// <br>\
+// 6.theDarkKnight<br>\
+// <br>\
+// American Movie<br>\
+// <br>\
+// <br>\
+// 7.ToyStory<br>\
+// <br>\
+// American Movie<br>\
+// "
