@@ -27,8 +27,30 @@
     background-position: center;
     background-size: 100% 100%;
     height: 100%;
-    overflow: hidden; /* Prevent interference with next section */
-  
+    overflow: hidden;
+}
+.section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
+    width: 90%;
+    height: 80vh;
+    z-index: 5;
+    margin-top: 5vh;
+}
+.last-grid {
+    margin-bottom: 10vh;
 }
 .fourth {
     background: radial-gradient(circle at center, #004d40 0%, #002d26 100%) !important;
@@ -152,23 +174,18 @@
 }
 
 .gallery-card {
-    position: absolute;
-    width: 22%;
-    height: 90vh; /* Majestic height to fill the section */
-    top: 5vh; /* Perfectly centered vertically (5vh top/bottom margin) */
+    position: relative;
+    width: 20%;
+    min-width: 250px;
+    height: 75vh;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
                 opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
                 filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-
     transform-style: preserve-3d;
-    z-index: 5;
     will-change: transform, opacity, filter;
 }
 
-/* Position cards in the rows with perfect horizontal symmetry (9% margins) */
-#card1, #card4 { left: 9%; }
-#card2, #card5 { left: 39%; }
-#card3, #card6 { left: 69%; }
+/* Individual card positioning removed for dynamic flex layout */
 
 
 
@@ -186,33 +203,34 @@
 }
 
 .heroImages {
-    width: 100%;
+    width: 80%;
     height: auto;
-    max-width: 32vh; /* Reduced from 45vh for a more refined look */
-    top: 0;
+    max-width: 22vh;
+    top: -5vh;
     left: 50%;
-    transform: translateX(-50%); /* Center the orb horizontally */
+    transform: translateX(-50%);
     position: absolute;
-    z-index: 2;
+    z-index: 5;
     transition: transform 0.4s ease;
-    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.25)); /* Softer shadow */
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
 }
 
 .messageCard {
-    overflow: hidden; /* Contain the flare sweep */
+    overflow: hidden;
     width: 100%;
-    height: 80vh; /* Scaled up to majestic monolithic height */
-    position: absolute;
-    background: rgba(255, 255, 255, 0.05); /* Darker/Sheerer base for better flare contrast */
-    backdrop-filter: blur(15px); /* Premium glass effect */
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    top: 4vh;
-    z-index: 1;
-
-    border-radius: 30px;
+    height: 100%;
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 /* Refractive Flare Effect */
@@ -252,17 +270,26 @@
 
 
 
-#messageContent{
-    line-height: 5vh; /* Increased for better readability on majestic scale */
-    padding-top: 28vh; /* Increased to 28vh to perfectly clear the floating orb */
-    padding-left: 3.5vh;
-    padding-right: 3.5vh;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 2.8vh; /* Slightly larger for premium feel */
-    word-spacing: 5px;
+.messageCard p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.6vh;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.05em;
 }
-
-/* EXPERIENCE GOD: Luxury UI Details & Atmospheric Depth */
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8vh;
+    font-weight: 700;
+    letter-spacing: 0.4vh;
+    color: #fff;
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+}
 
 .section-marker {
     position: absolute;
@@ -273,10 +300,10 @@
     font-size: 1.4vh;
     font-weight: 400;
     letter-spacing: 1.2vh;
-    color: rgba(0,0,0,0.25);
+    color: rgba(255,255,255,0.2);
     pointer-events: none;
     text-transform: uppercase;
-    z-index: 10; /* Above shards */
+    z-index: 10;
     mix-blend-mode: overlay; 
 }
 
@@ -289,28 +316,9 @@
     font-weight: 700;
     letter-spacing: 1.5vh;
     color: rgba(255,255,255,0.4);
-    z-index: 100; /* Persistent across sections */
+    z-index: 100;
     pointer-events: none;
     text-transform: uppercase;
-}
-
-.messageCard p {
-    font-size: 1.8vh;
-    line-height: 1.6;
-    color: rgba(255,255,255,0.85);
-    margin: 0;
-}
-
-.card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5vh;
-    font-weight: 700;
-    letter-spacing: 0.8vh;
-    color: rgba(255,255,255,0.95);
-    margin-bottom: 2vh;
-    text-transform: uppercase;
-    position: relative;
-    display: inline-block;
 }
 
 .card-title::after {

@@ -3,6 +3,7 @@
 <div class="mainPage" id="fullpage">
     <div class="branding-header">LIKITHA // 2026</div>
 
+    <!-- SECTION 00: GENESIS -->
     <div class="first section">
         <div class="section-marker">GENESIS // 00</div>
         <div class="wrap" id="wrap">
@@ -10,117 +11,223 @@
                 <div class="photo-wrap">
                     <div class="side side-front">
                         <p class="image">
-                            <img id="img" src="../static/photo/{% raw %}{{img}}{% endraw %}">
+                            <img id="img" src="{{ url_for('static',filename='image/hero.png') }}">
                         </p>
-                        <p class="caption">{% raw %}{{caption}}{% endraw %}</p>
-                        
+                        <p class="caption">LIKITHA REDDY</p>
                     </div>
                     <div class="side side-back">
-                        <p class="desc">{% raw %}{{desc}}{% endraw %}</p>
+                        <p class="desc">A soul defined by ambition, grounded in kindness, and destined for the stars.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="second section">
+
+    <!-- SECTION 01: ECHOES -->
+    <div class="section">
         <div class="section-marker">ECHOES // 01</div>
-        <div class="atmospheric-void">
-            <div class="shard-wrap s1"><div class="shard"></div></div>
-            <div class="shard-wrap s2"><div class="shard"></div></div>
-            <div class="shard-wrap s3"><div class="shard"></div></div>
-        </div>
-        <div class="gallery-card" id="card1">
-            <img src="{{ url_for('static',filename='image/luminescence.png') }}" alt="firstHero" class="heroImages" id="heroImage1">
-            <div id="message1" class="messageCard">
-                <h3 class="card-title">LUMINESCENCE</h3>
-                <p id="messageContent">
-                    The light you bring into every room is a frequency only we can hear. A glow that defines my world.
-                </p>
+        <div class="gallery-container">
+            <!-- 1. Her Smile -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Happy mix .jpg.jpeg') }}" alt="Smile" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE UNFILTERED RADIANCE</h3>
+                    <p>A quiet sun that rises without warning. It is the purest frequency of joy, reminding us that even in the rush of ambition, the simplest light remains the most powerful.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-card" id="card2">
-            <img src="{{ url_for('static',filename='image/resonance.png') }}" alt="secondHero" class="heroImages" id="heroImage2">
-            <div id="message2" class="messageCard">
-                <h3 class="card-title">RESONANCE</h3>
-                <p id="messageContent">
-                    A perfect harmony of two souls, vibrating at the exact same rhythm. Your vibe is my home.
-                </p>
+            <!-- 2. Her Eyes -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Pretty mix .jpg.jpeg') }}" alt="Eyes" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE SILENT OBSERVER</h3>
+                    <p>Infinite windows into a soul that sees the world not just as it is, but as it could be. Within them lies a steady gaze of focus, softened only by an innate kindness.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-card" id="card3">
-            <img src="{{ url_for('static',filename='image/gravity.png') }}" alt="thirdHero" class="heroImages" id="heroImage3">
-            <div id="message3" class="messageCard">
-                <h3 class="card-title">GRAVITY</h3>
-                <p id="messageContent">
-                    In a world of chaos, you are the force that keeps my universe in orbit. My constant, my peace.
-                </p>
+            <!-- 3. Childlike Heart -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/cutie mix.jpg.jpeg') }}" alt="Heart" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE ETERNAL BLOOM</h3>
+                    <p>In a world that demands armor, she chose wonder. A heart that still speaks the language of innocence, finding magic in the mundane and beauty in the briefest moments.</p>
+                </div>
+            </div>
+            <!-- 4. Caring Nature -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Sleeping mix .jpg.jpeg') }}" alt="Caring" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE QUIET ANCHOR</h3>
+                    <p>A selfless devotion that feels like a steady hand in a storm. She doesn’t just listen; she understands. She doesn’t just stay; she heals.</p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="third section">
-        <div class="section-marker">GALAXIES // 02</div>
-        <div class="atmospheric-void">
-            <div class="shard-wrap s1"><div class="shard"></div></div>
-            <div class="shard-wrap s2"><div class="shard"></div></div>
-            <div class="shard-wrap s3"><div class="shard"></div></div>
-        </div>
-        <div class="gallery-card" id="card4">
-            <img src="{{ url_for('static',filename='image/infinity.png') }}" alt="fourthHero" class="heroImages" id="heroImage1">
-            <div id="message1" class="messageCard">
-                <h3 class="card-title">INFINITY</h3>
-                <p id="messageContent">
-                     Your potential is a galaxy without borders, stretching beyond the edge of imagination. Endless and bright.
-                </p>
+    <!-- SECTION 02: PULSE -->
+    <div class="section">
+        <div class="section-marker">PULSE // 02</div>
+        <div class="gallery-container">
+            <!-- 5. Public Speaking -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Diva mix .jpg.jpeg') }}" alt="Speaking" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE VOICE OF COMMAND</h3>
+                    <p>Where words become architecture. On stage, she is a conductor of thought—articulate, commanding, and yet, holding a vulnerability that makes her impossible to ignore.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-card" id="card5">
-            <img src="{{ url_for('static',filename='image/horizon.png') }}" alt="fifthHero" class="heroImages" id="heroImage2">
-            <div id="message2" class="messageCard">
-                <h3 class="card-title">HORIZON</h3>
-                <p id="messageContent">
-                     Every sunrise with you is a new promise of a future we haven't even dreamed of yet. The best is here.
-                </p>
+            <!-- 6. CTO & Leadership -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Swag mix.jpg.jpeg') }}" alt="CTO" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE ARCHITECT OF PULSE</h3>
+                    <p>A mind that breathes logic and a heart that leads with empathy. At the helm of GreenPulse, she doesn’t just build code; she builds a future where innovation has a heartbeat.</p>
+                </div>
             </div>
-        </div>
-        <div class="gallery-card" id="card6">
-            <img src="{{ url_for('static',filename='image/zenith.png') }}" alt="sixthHero" class="heroImages" id="heroImage3">
-            <div id="message3" class="messageCard">
-                <h3 class="card-title">ZENITH</h3>
-                <p id="messageContent">
-                    The peak of everything beautiful, where your spirit meets the stars. You are the ultimate masterpiece.
-                </p>
+            <!-- 7. Learning & Intelligence -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/chashmish or fatty mix .jpg.jpeg') }}" alt="Intelligence" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE INFINITE HUNGER</h3>
+                    <p>A scholar of the unknown. Her curiosity is a relentless engine, constantly decoding the complexities of AI and the nuances of the human spirit with equal elegance.</p>
+                </div>
+            </div>
+            <!-- 8. Hackathon Memories -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Gangster mix .jpg.jpeg') }}" alt="Hackathon" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE NEON RESILIENCE</h3>
+                    <p>3:00 AM. Blue light. Coffee-stained logic. In those high-pressure hours, she wasn't just a teammate; she was the clarity we needed when the world turned into syntax.</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="fourth section">
-        <div class="section-marker">SOULMAP // 03</div>
-        <div id="leftInfo">
-            <p id="wordmapText">The image that you see on the right has been developed using Machine Learning.
-                It used our text data over the past few weeks. The words that appear bigger and brighter, have been used more 
-                frequently than others.</p>
+
+    <!-- SECTION 03: VOYAGE -->
+    <div class="section">
+        <div class="section-marker">VOYAGE // 03</div>
+        <div class="gallery-container">
+            <!-- 9. Startup Journey -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Soul.jpg.jpeg') }}" alt="Startup" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE AUDACITY TO BUILD</h3>
+                    <p>Born from a whisper of 'what if.' Through the pivots and the pressure, she remains the constant—the one who believes in the vision when the horizon is still dark.</p>
+                </div>
+            </div>
+            <!-- 10. Emotional Support -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Baby doll or barbie doll if ok....jpg.jpeg') }}" alt="Support" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE SAFE HARBOR</h3>
+                    <p>She carries a strength that is never loud. When the weight of the world felt heavy, her presence was the equilibrium—the silent reassurance that we are never truly alone.</p>
+                </div>
+            </div>
+            <!-- 11. Pure Soul -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/Idhi Acham lady villians lekka pettindhi pose 😆.jpg.jpeg') }}" alt="Soul" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE TRANSPARENT DEPTH</h3>
+                    <p>A rare clarity in a shadowed world. There is no pretense, only a genuine existence that inspires everyone to be a little more human, a little more kind.</p>
+                </div>
+            </div>
+            <!-- 12. Team GREENPULSE -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='images/crazy mix .jpg.jpeg') }}" alt="Team" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE SHARED HEARTBEAT</h3>
+                    <p>More than a venture; a collective breath. She is the pulse in the green, the soul in the strategy, and the sister in the struggle.</p>
+                </div>
+            </div>
         </div>
-        <div id="rightImage">
-                <img  src="{{ url_for('static',filename='image/test.png') }}" alt="Word Cloud" id="wordCloud" data-title="Image Caption" data-group="single"  class="js-lightBox">
+    </div>
+
+    <!-- SECTION 04: HORIZON -->
+    <div class="section">
+        <div class="section-marker">HORIZON // 04</div>
+        <div class="gallery-container">
+            <!-- 13. College Memories -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/0.png') }}" alt="College" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE GOLDEN ECHOES</h3>
+                    <p>A mosaic of corridors, late-night debates, and shared laughter. These are the foundations of a legacy we are still writing together, one memory at a time.</p>
+                </div>
+            </div>
+            <!-- 14. Trips & Laughs -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/1.png') }}" alt="Trips" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE UNTETHERED JOY</h3>
+                    <p>Moments where the CTO became the child. Laughter that echoes across map pins, proving that the best adventures aren't destinations, but the people we travel with.</p>
+                </div>
+            </div>
+            <!-- 15. Silent Strength -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/3.png') }}" alt="Strength" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE IRON GRACE</h3>
+                    <p>A resilience that doesn't need to shout to be felt. She moves through challenges with a quiet dignity, turning every obstacle into a stepping stone for the team.</p>
+                </div>
+            </div>
+            <!-- 16. Future Dreams -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/4.png') }}" alt="Dreams" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE UNWRITTEN GALAXIES</h3>
+                    <p>Her ambition is a map of the stars. She doesn’t dream of success; she plans for significance. The future is bright because she is already there, waiting for us.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 05: SOULMAP & ETERNITY -->
+    <div class="section">
+        <div class="section-marker">ETERNITY // 05</div>
+        <div class="gallery-container last-grid">
+            <!-- 17. Respect & Trust -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/5.png') }}" alt="Trust" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE SACRED BOUND</h3>
+                    <p>A connection forged in the fires of consistency. In a world of fleeting bonds, her word is a contract, and her trust is a sanctuary.</p>
+                </div>
+            </div>
+            <!-- 18. Her Presence -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/luminescence.png') }}" alt="Presence" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE ATMOSPHERIC SHIFT</h3>
+                    <p>The room changes when she enters—not with noise, but with warmth. A natural gravitation toward a soul that makes everyone feel seen and valued.</p>
+                </div>
+            </div>
+            <!-- 19. Growth Together -->
+            <div class="gallery-card">
+                <img src="{{ url_for('static',filename='image/resonance.png') }}" alt="Growth" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE SYMBIOTIC CLIMB</h3>
+                    <p>We didn’t just evolve; we intertwined. Every win and every lesson shared has turned our individual paths into a singular journey of ascent.</p>
+                </div>
+            </div>
+            <!-- 20. Final Birthday Card -->
+            <div class="gallery-card highlight-card">
+                <img src="{{ url_for('static',filename='image/zenith.png') }}" alt="Final" class="heroImages">
+                <div class="messageCard">
+                    <h3 class="card-title">THE ETERNAL CHAPTER</h3>
+                    <p>Likitha—today we celebrate the rarity of your soul. You are a masterpiece in progress, a leader of the future, and a best friend for all time. Stay luminous.</p>
+                </div>
+            </div>
         </div>
         
-       
-    </div>
-    <div class="fifth section">
-        <div class="section-marker">ETERNITY // 04</div>
-        <a href="{{ url_for('logout') }}" id="logoutLink">LOG OUT</a>
-        <div id="giftTextContainer">
-            
-            <p id="giftText">Click below to receive your gift !</p>
-            <a href="{{ url_for('sendMail') }}" id="giftLink">GIFT</a>
+        <div id="giftSection">
+            <a href="{{ url_for('logout') }}" id="logoutLink">LOG OUT</a>
+            <div id="giftTextContainer">
+                <p id="giftText">A small token for the journey ahead...</p>
+                <a href="{{ url_for('sendMail') }}" id="giftLink">THE GIFT</a>
+            </div>
         </div>
     </div>
 
 </div>
 
-
-
-
-    <script src="{{ url_for('static', filename='scripts/magnetic_shards.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/card_interaction.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/magnetic_shards.js') }}"></script>
+<script src="{{ url_for('static', filename='scripts/card_interaction.js') }}"></script>
 {% endblock %}
