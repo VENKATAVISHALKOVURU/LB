@@ -1,19 +1,28 @@
 # Roadmap: Experience God Upgrade
 
 ## Milestone 1: Majestic Proportions (The Foundation)
-- [ ] **Phase 1: Vertical Expansion**
+- [x] **Phase 1: Vertical Expansion**
     - Scale cards to `80vh`.
     - Recenter layout for `90vh` component height.
-    - Status: [ ]
+    - Status: [x]
 
 ## Milestone 2: Atmospheric Polish (The Soul)
-- [ ] **Phase 2: Atmospheric Void**
+- [x] **Phase 2: Atmospheric Void**
     - Implement CSS Floating Shards.
     - Add floor glow gradients.
-    - Status: [ ]
+    - Status: [x]
 
 ## Milestone 3: Gallery Precision (The Detail)
-- [ ] **Phase 3: Luxury Markers**
+- [x] **Phase 3: Luxury Markers**
     - Add section identifiers.
     - Refine typographic rhythm.
-    - Status: [ ]
+    - Status: [x]
+
+## Milestone 4: Interactive Gravitas (The Life)
+- [x] **Phase 4: Magnetic Shards**
+    - Implement JS-based interaction for shards to react to cursor movement.
+    - Add subtle attraction/repulsion logic.
+    - Status: [x]
+
+
+

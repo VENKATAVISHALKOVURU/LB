@@ -2,6 +2,7 @@
 
 <div class="mainPage" id="fullpage">
     <div class="first section">
+        <div class="section-marker">JOURNEY // 00</div>
         <div class="wrap" id="wrap">
             <div class="photo photo_front" id="{% raw %}photo_{{index}}{% endraw %}" onclick="turn(this)">
                 <div class="photo-wrap">
@@ -21,7 +22,11 @@
     </div>
     <div class="second section">
         <div class="section-marker">MEMORIES // 01</div>
-        <div class="atmospheric-void"></div>
+        <div class="atmospheric-void">
+            <div class="shard-wrap s1"><div class="shard"></div></div>
+            <div class="shard-wrap s2"><div class="shard"></div></div>
+            <div class="shard-wrap s3"><div class="shard"></div></div>
+        </div>
         <div class="gallery-card" id="card1">
             <img src="{{ url_for('static',filename='image/0.png') }}" alt="firstHero" class="heroImages" id="heroImage1">
             <div id="message1" class="messageCard">
@@ -50,7 +55,11 @@
 
     <div class="third section">
         <div class="section-marker">COLLECTIONS // 02</div>
-        <div class="atmospheric-void"></div>
+        <div class="atmospheric-void">
+            <div class="shard-wrap s1"><div class="shard"></div></div>
+            <div class="shard-wrap s2"><div class="shard"></div></div>
+            <div class="shard-wrap s3"><div class="shard"></div></div>
+        </div>
         <div class="gallery-card" id="card4">
             <img src="{{ url_for('static',filename='image/5.png') }}" alt="fourthHero" class="heroImages" id="heroImage1">
             <div id="message1" class="messageCard">
@@ -77,6 +86,7 @@
         </div>
     </div>
     <div class="fourth section">
+        <div class="section-marker">ANALYTICS // 03</div>
         <div id="leftInfo">
             <p id="wordmapText">The image that you see on the right has been developed using Machine Learning.
                 It used our text data over the past few weeks. The words that appear bigger and brighter, have been used more 
@@ -89,6 +99,7 @@
        
     </div>
     <div class="fifth section">
+        <div class="section-marker">SURPRISE // 04</div>
         <a href="{{ url_for('logout') }}" id="logoutLink">LOG OUT</a>
         <div id="giftTextContainer">
             
@@ -102,4 +113,5 @@
 
 
 
+    <script src="{{ url_for('static', filename='scripts/magnetic_shards.js') }}"></script>
 {% endblock %}

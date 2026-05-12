@@ -188,15 +188,16 @@
     width: 100%;
     height: 80vh; /* Scaled up to majestic monolithic height */
     position: absolute;
-    background-color: aliceblue;
+    background: rgba(255, 255, 255, 0.7); /* Translucent base */
+    backdrop-filter: blur(15px); /* Premium glass effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     top: 4vh; /* Maintained tight connection with the orb */
     z-index: 1;
 
-
-    border-radius: 25px;
+    border-radius: 30px; /* Slightly smoother corners */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1), 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .gallery-card:hover .messageCard {
@@ -226,17 +227,20 @@
 
 .section-marker {
     position: absolute;
-    right: 3vh;
+    right: 4vh;
     top: 50%;
     transform: translateY(-50%) rotate(90deg);
     font-family: 'Playfair Display', serif;
-    font-size: 1.8vh;
-    letter-spacing: 0.8vh;
-    color: rgba(0,0,0,0.15);
+    font-size: 1.4vh;
+    font-weight: 400;
+    letter-spacing: 1.2vh;
+    color: rgba(0,0,0,0.25);
     pointer-events: none;
     text-transform: uppercase;
     z-index: 1;
+    mix-blend-mode: overlay; /* Blends with background for a high-end look */
 }
+
 
 /* Atmospheric Void: Floating Background Shards */
 .atmospheric-void {
@@ -250,49 +254,54 @@
     overflow: hidden;
 }
 
-.atmospheric-void::before,
-.atmospheric-void::after {
-    content: '';
+.shard-wrap {
     position: absolute;
-    width: 15vh;
-    height: 15vh;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-    backdrop-filter: blur(5px);
+    will-change: transform;
+}
+
+.shard {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+    backdrop-filter: blur(8px);
     border: 1px solid rgba(255,255,255,0.1);
-    transform: rotate(45deg);
-    animation: floatVoid 20s infinite alternate ease-in-out;
+    transform: translate(var(--mouseX, 0), var(--mouseY, 0)) rotate(45deg);
+    will-change: transform;
+    transition: transform 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.atmospheric-void::before {
-    top: 15%;
-    left: 10%;
-    animation-delay: -5s;
+.s1 { width: 18vh; height: 18vh; top: 10%; left: 5%; animation: floatS1 25s infinite alternate ease-in-out; }
+.s2 { width: 12vh; height: 12vh; bottom: 15%; right: 10%; animation: floatS2 18s infinite alternate-reverse ease-in-out; opacity: 0.6; }
+.s3 { width: 8vh; height: 8vh; top: 40%; right: 20%; animation: floatS3 22s infinite alternate ease-in-out; opacity: 0.4; }
+
+@keyframes floatS1 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(8vh, 12vh) rotate(30deg); }
 }
 
-.atmospheric-void::after {
-    bottom: 10%;
-    right: 15%;
-    width: 10vh;
-    height: 10vh;
-    animation-delay: -12s;
+@keyframes floatS2 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-10vh, -8vh) rotate(-15deg); }
 }
 
-@keyframes floatVoid {
-    0% { transform: translate(0, 0) rotate(45deg); }
-    100% { transform: translate(5vh, 10vh) rotate(60deg); }
+@keyframes floatS3 {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-5vh, 15vh) rotate(45deg); }
 }
 
-/* Floor Glow: Radial gradient at the bottom to anchor floating cards */
+
+/* Floor Glow: Majestic radial gradient at the bottom */
 .section::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 30vh;
-    background: radial-gradient(circle at 50% 100%, rgba(255,255,255,0.4), transparent 70%);
+    height: 40vh; /* Increased for better depth */
+    background: radial-gradient(circle at 50% 110%, rgba(255,255,255,0.5), transparent 75%);
     pointer-events: none;
     z-index: 0;
 }
+
 
 
