@@ -43,10 +43,21 @@ def logout():
     logout_user()
     return redirect(url_for('index'))
 
-@login_required
 @app.route('/sendMail')
+@login_required
 def sendMail():
-    msg = Message('Hello', sender = Config.MAIL_USERNAME, recipients = [Config.MAIL_RECEIVER])
-    msg.body = "Mail content"
-    mail.send(msg)
-    return  ('', 204)
+    try:
+        # Check if mail is configured
+        if not Config.MAIL_USERNAME or not Config.MAIL_PASSWORD or not Config.MAIL_RECEIVER:
+            print("Mail configuration missing. Skipping send.")
+            return redirect(url_for('main', mail_status='unconfigured'))
+
+        msg = Message('Birthday Gift Triggered!', 
+                      sender = Config.MAIL_USERNAME, 
+                      recipients = [Config.MAIL_RECEIVER])
+        msg.body = f"The gift link was clicked by {current_user.username}!"
+        mail.send(msg)
+        return redirect(url_for('main', mail_status='success'))
+    except Exception as e:
+        print(f"Failed to send mail: {e}")
+        return redirect(url_for('main', mail_status='error'))

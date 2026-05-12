@@ -7,12 +7,28 @@ $(document).ready(function () {
     scrollHorizontally: true
   });
 
-  document.getElementById("giftLink").addEventListener("click", function () {
-    swal(
-      'Successful !',
-      'Check your email for the surprise!',
-      'success'
-    )
+  // Handle Mail Status Feedback
+  const urlParams = new URLSearchParams(window.location.search);
+  const mailStatus = urlParams.get('mail_status');
+
+  if (mailStatus === 'success') {
+    Swal.fire('Sent!', 'Your cinematic gift has been delivered to your email.', 'success');
+  } else if (mailStatus === 'error') {
+    Swal.fire('Wait...', 'We couldn\'t send the email right now, but your gift is reserved!', 'warning');
+  } else if (mailStatus === 'unconfigured') {
+    Swal.fire('Cinematic Mode', 'Mail server is in demo mode. Your gift is ready and waiting!', 'info');
+  }
+
+  document.getElementById("giftLink").addEventListener("click", function (e) {
+    // Show a loading state
+    Swal.fire({
+      title: 'Delivering...',
+      text: 'Preparing your cinematic surprise.',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading()
+      }
+    });
   });
 
   // Cinematic Focus: 3D Tilt Interaction
