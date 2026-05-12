@@ -29,12 +29,6 @@
     - Implement smooth 3D tilt refinement.
     - Status: [x]
 
-- [x] **Phase 6: Soulmap Perfection**
-    - Resolve 'white paint' floor glow interference.
-    - Implement glassmorphism containers for word cloud content.
-    - Synchronize atmospheric shards across all cinematic sections.
-    - Status: [x]
-
 
 
 

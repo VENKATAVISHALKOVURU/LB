@@ -16,7 +16,6 @@ The gallery cards have been centered and gaps removed. However, there is signifi
 - [x] Phase 3: Luxury Markers (added consistent markers and refined typography).
 - [x] Phase 4: Magnetic Shards (implemented JS-based interaction for background shards).
 - [x] Phase 5: Refractive Hover (implemented lens flare and refined 3D tilt for cards).
-- [x] Phase 6: Soulmap Perfection (resolved 'white paint' floor glow and added glassmorphism to word cloud).
 
 ## Incomplete Work
 - None.
