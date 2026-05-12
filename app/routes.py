@@ -24,14 +24,19 @@ def login():
             print("Invalid username or password")
             return redirect(url_for('login'))
         login_user(user)
-        return redirect(url_for('main'))
+        return redirect(url_for('loading')) # Redirect to cinematic loading screen
     return render_template("login.html",form=form)
 
+@app.route('/loading')
+@login_required
+def loading():
+    return render_template("loading.html")
 
 @app.route('/main')
 @login_required
 def main():
     return render_template("main.html")
+
 
 @app.route('/logout')
 def logout():
