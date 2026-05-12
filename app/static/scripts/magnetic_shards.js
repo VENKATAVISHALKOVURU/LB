@@ -1,23 +1,31 @@
+let mouseX = 0, mouseY = 0;
+let targetMouseX = 0, targetMouseY = 0;
+
 document.addEventListener('mousemove', (e) => {
+    targetMouseX = e.clientX;
+    targetMouseY = e.clientY;
+});
+
+function updateShards() {
+    // Smooth interpolation (lerp)
+    mouseX += (targetMouseX - mouseX) * 0.1;
+    mouseY += (targetMouseY - mouseY) * 0.1;
+
     const shards = document.querySelectorAll('.shard');
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
     shards.forEach((shard, index) => {
-        // Different intensity for each shard for organic feel
         const intensity = (index + 1) * 15; 
-        
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        
         const moveX = (mouseX - centerX) / intensity;
         const moveY = (mouseY - centerY) / intensity;
 
-        // Apply transform while preserving the 45deg rotation from CSS
-        // Note: CSS already has animations, so we add an offset via custom property
-        // Or we can just set the transform directly if we want to override
-        // But better to use CSS variables to avoid clashing with keyframes
         shard.style.setProperty('--mouseX', `${moveX}px`);
         shard.style.setProperty('--mouseY', `${moveY}px`);
     });
-});
+
+    requestAnimationFrame(updateShards);
+}
+
+// Start the loop
+requestAnimationFrame(updateShards);

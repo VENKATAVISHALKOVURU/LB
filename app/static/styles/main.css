@@ -332,5 +332,72 @@
     display: none !important;
 }
 
+/* MOBILE RESPONSIVENESS & PERFORMANCE */
+@media (max-width: 768px) {
+    .messageCard {
+        height: 70vh !important; /* Slightly shorter for mobile aspect ratios */
+        padding: 20px !important;
+        border-radius: 15px !important;
+        top: 8vh !important;
+    }
+
+    #messageContent {
+        font-size: 2vh !important;
+        line-height: 4vh !important;
+        padding-top: 25vh !important; /* Adjust for mobile orb position */
+    }
+
+    .section-marker {
+        right: 2vh !important;
+        font-size: 1.2vh !important;
+        letter-spacing: 0.8vh !important;
+    }
+
+    .shard {
+        backdrop-filter: blur(4px) !important; /* Reduce blur cost on mobile */
+    }
+    
+    .s1 { width: 12vh !important; height: 12vh !important; }
+    .s2 { width: 8vh !important; height: 8vh !important; }
+    .s3 { width: 5vh !important; height: 5vh !important; }
+
+    /* Word Cloud Responsiveness */
+    #leftInfo {
+        width: 90% !important;
+        left: 5% !important;
+        height: 40% !important;
+        top: 5% !important;
+    }
+
+    #rightImage {
+        width: 90% !important;
+        left: 5% !important;
+        height: 45% !important;
+        top: 50% !important;
+    }
+
+    #wordmapText {
+        font-size: 2vh !important;
+    }
+
+    #giftTextContainer {
+        left: 10% !important;
+        width: 80% !important;
+        text-align: center;
+    }
+}
+
+/* Ensure smooth performance on all devices */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.shard, .messageCard, .gallery-card {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+}
+
+
 
 
