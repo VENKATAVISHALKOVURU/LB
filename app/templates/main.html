@@ -1,8 +1,10 @@
 {% extends "base.html" %} {% block content %}
 
 <div class="mainPage" id="fullpage">
+    <div class="branding-header">LIKITHA // 2026</div>
+
     <div class="first section">
-        <div class="section-marker">JOURNEY // 00</div>
+        <div class="section-marker">GENESIS // 00</div>
         <div class="wrap" id="wrap">
             <div class="photo photo_front" id="{% raw %}photo_{{index}}{% endraw %}" onclick="turn(this)">
                 <div class="photo-wrap">
@@ -21,7 +23,7 @@
         </div>
     </div>
     <div class="second section">
-        <div class="section-marker">MEMORIES // 01</div>
+        <div class="section-marker">ECHOES // 01</div>
         <div class="atmospheric-void">
             <div class="shard-wrap s1"><div class="shard"></div></div>
             <div class="shard-wrap s2"><div class="shard"></div></div>
@@ -54,7 +56,7 @@
     </div>
 
     <div class="third section">
-        <div class="section-marker">COLLECTIONS // 02</div>
+        <div class="section-marker">GALAXIES // 02</div>
         <div class="atmospheric-void">
             <div class="shard-wrap s1"><div class="shard"></div></div>
             <div class="shard-wrap s2"><div class="shard"></div></div>
@@ -86,7 +88,7 @@
         </div>
     </div>
     <div class="fourth section">
-        <div class="section-marker">ANALYTICS // 03</div>
+        <div class="section-marker">SOULMAP // 03</div>
         <div id="leftInfo">
             <p id="wordmapText">The image that you see on the right has been developed using Machine Learning.
                 It used our text data over the past few weeks. The words that appear bigger and brighter, have been used more 
@@ -99,7 +101,7 @@
        
     </div>
     <div class="fifth section">
-        <div class="section-marker">SURPRISE // 04</div>
+        <div class="section-marker">ETERNITY // 04</div>
         <a href="{{ url_for('logout') }}" id="logoutLink">LOG OUT</a>
         <div id="giftTextContainer">
             
